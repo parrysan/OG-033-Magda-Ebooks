@@ -46,9 +46,9 @@
 > **Operational facts that should never have to be re-discovered.** Deployed URLs, store handles, theme IDs, API endpoints, credentials *location* (never the credentials themselves — those live in the global `.env`, see global AGENT.md §2.5). Update this section whenever a fact changes — it is the canonical source.
 
 - **GitHub**: https://github.com/parrysan/OG-033-Magda-Ebooks
-- **Production URL**: (tbd)
-- **Staging / preview URL**: (tbd)
-- **Platform handle / project ID**: (tbd)
+- **Production URL**: https://og-033-magda-ebooks.web.app (client portal — Overview, Research, Meetings)
+- **Staging / preview URL**: http://localhost:8081 (`python3 -m http.server 8081` from `docs/client-area/`)
+- **Platform handle / project ID**: `og-033-magda-ebooks` (Firebase)
 - **Research store**: OG-Research/OG-033-Magda-Ebooks/ (research, assets, deliverables) — https://drive.google.com/drive/folders/1GbDvu_fzsrQwFSUO5jD7lQISCC4A9Mbz
 - **Credentials**: stored in global `.env` under `OG033_*`
 
@@ -90,9 +90,9 @@ Overrides: none yet — add project-specific overrides here as they emerge.
 
 > **Optional, ephemeral.** A 2–3 line free-form scratch pad of "where I left off" — not durable knowledge. Durable decisions belong in the vault project page. Wipe and rewrite freely.
 
-Last action (2026-07-16): Project scaffolded via og-project skill. Magda's email + 4 PDFs (2 ebooks + checklists) loaded into OG-Research/OG-033-Magda-Ebooks/research/.
+Last action (2026-07-16): Project scaffolded; client portal (docs/client-area/) built out with source-material links and deployed to https://og-033-magda-ebooks.web.app (v1.0). Fable 5 market-assessment brief drafted (docs/fable-brief-market-assessment.md) — being extended to also check EN/DE-language market value before dispatch.
 
-Next action: Prepare and dispatch a research brief to Fable 5 (Agent tool, model: fable) to assess the land real-estate ebook/education opportunity across Poland, and scope a simple MVP showcasing what the client portal could become.
+Next action: Finalise and dispatch the Fable 5 brief (Agent tool, model: fable) to assess the opportunity across Poland (+ EN/DE language viability), and scope a simple MVP.
 
 Open questions: What "client portal" should contain (findings only, or a live dashboard Magda logs into); whether this stays a separate project or folds back into OG-017 once scoped.
 
