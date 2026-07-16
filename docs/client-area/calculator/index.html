@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Ile deweloper naprawdę zapłaci za Twoją działkę? — Gruntownie o nieruchomościach</title>
+<style>
+  :root{
+    --green-950:#0c1f16; --green-900:#12291d; --green-800:#1b3a2a;
+    --green-600:#2e6b47; --green-400:#5ea985; --cream:#f4f1e8;
+    --gold:#c9a856; --ink:#1c221e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Georgia,'Times New Roman',serif;background:var(--cream);color:var(--ink);line-height:1.55}
+  .sans{font-family:-apple-system,'Segoe UI',Helvetica,Arial,sans-serif}
+  header{background:var(--green-950);color:var(--cream);padding:2.5rem 1rem 3rem;text-align:center}
+  header .brand{font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--green-400);margin-bottom:1rem}
+  header h1{font-size:clamp(1.6rem,4.5vw,2.6rem);max-width:38ch;margin:0 auto .8rem}
+  header p{max-width:52ch;margin:0 auto;color:#cfd8cf;font-size:1.05rem}
+  main{max-width:640px;margin:-1.8rem auto 3rem;padding:0 1rem}
+  .card{background:#fff;border-radius:12px;box-shadow:0 8px 30px rgba(12,31,22,.15);padding:1.8rem}
+  label{display:block;font-weight:700;margin:1.1rem 0 .35rem;font-size:.95rem}
+  label:first-of-type{margin-top:0}
+  .hint{font-weight:400;font-size:.8rem;color:#5a6a5f;display:block;margin-top:.15rem}
+  input[type=number],select{width:100%;padding:.65rem .75rem;font-size:1rem;border:1.5px solid #b9c4ba;border-radius:8px;background:#fbfaf6}
+  input:focus,select:focus{outline:2px solid var(--green-600);border-color:var(--green-600)}
+  button{width:100%;margin-top:1.5rem;padding:.9rem;font-size:1.05rem;font-weight:700;color:var(--cream);background:var(--green-800);border:none;border-radius:8px;cursor:pointer}
+  button:hover{background:var(--green-600)}
+  .step{display:none}
+  .step.active{display:block}
+  .gate h2{font-size:1.3rem;margin-bottom:.5rem}
+  .gate p{font-size:.95rem;color:#3c463f;margin-bottom:1rem}
+  .result .figure{text-align:center;background:var(--green-950);color:var(--cream);border-radius:10px;padding:1.5rem 1rem;margin:1rem 0}
+  .result .figure .range{font-size:clamp(1.4rem,5vw,2rem);font-weight:700;color:var(--gold)}
+  .result .figure .lbl{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green-400)}
+  .breakdown{font-size:.92rem;border-top:1px solid #dfe3da;margin-top:1rem;padding-top:1rem}
+  .breakdown div{display:flex;justify-content:space-between;padding:.3rem 0}
+  .breakdown span:last-child{font-weight:700}
+  .cta{margin-top:1.4rem;background:#f0ead8;border-left:4px solid var(--gold);padding:1rem;font-size:.95rem;border-radius:0 8px 8px 0}
+  .cta a{color:var(--green-800);font-weight:700}
+  .disclaimer{font-size:.75rem;color:#6b756d;margin-top:1.5rem;text-align:center}
+  footer{text-align:center;font-size:.8rem;color:#6b756d;padding:0 1rem 2.5rem}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand sans">Gruntownie o nieruchomościach</div>
+  <h1>Ile deweloper naprawdę zapłaci za Twoją działkę?</h1>
+  <p>Deweloper nie kupuje metrów ziemi — kupuje metry mieszkań, które może na niej zbudować (PUM). Sprawdź, co to oznacza dla wartości Twojego gruntu.</p>
+</header>
+
+<main>
+  <div class="card sans">
+
+    <!-- Step 1: inputs -->
+    <form id="calcForm" class="step active">
+      <label>Powierzchnia działki (m²)
+        <span class="hint">Znajdziesz ją w wypisie z rejestru gruntów lub księdze wieczystej.</span>
+      </label>
+      <input type="number" id="area" min="100" max="1000000" step="10" value="2000" required>
+
+      <label>Lokalizacja działki</label>
+      <select id="location">
+        <option value="10000">Warszawa — centrum / śródmieście</option>
+        <option value="5000" selected>Warszawa — poza centrum</option>
+        <option value="4000">Kraków / Wrocław / Trójmiasto</option>
+        <option value="2500">Poznań / Łódź / inne duże miasto</option>
+        <option value="1500">Strefa podmiejska aglomeracji</option>
+      </select>
+
+      <label>Wskaźnik intensywności zabudowy
+        <span class="hint">Z miejscowego planu (MPZP) lub decyzji WZ. Nie znasz? Wybierz szacunek.</span>
+      </label>
+      <select id="intensity">
+        <option value="0.6">Zabudowa jednorodzinna (~0,6)</option>
+        <option value="1.2" selected>Niska zabudowa wielorodzinna (~1,2)</option>
+        <option value="2.0">Średnia zabudowa wielorodzinna (~2,0)</option>
+        <option value="3.0">Intensywna zabudowa miejska (~3,0)</option>
+      </select>
+
+      <button type="submit">Oblicz wartość dla dewelopera →</button>
+    </form>
+
+    <!-- Step 2: email gate (UI mock — no backend) -->
+    <form id="gateForm" class="step gate">
+      <h2>Twój wynik jest gotowy.</h2>
+      <p>Podaj adres e-mail, a pokażemy wyliczenie i wyślemy Ci bezpłatną checklistę <em>„7 pytań, które musisz zadać przed rozmową z deweloperem”</em>.</p>
+      <label>Adres e-mail</label>
+      <input type="email" id="email" placeholder="twoj@email.pl" required>
+      <button type="submit">Pokaż wycenę</button>
+    </form>
+
+    <!-- Step 3: result -->
+    <div id="result" class="step result">
+      <div class="figure">
+        <div class="lbl">Szacunkowa wartość działki dla dewelopera</div>
+        <div class="range" id="valueRange"></div>
+      </div>
+      <div class="breakdown">
+        <div><span>Powierzchnia działki</span><span id="bArea"></span></div>
+        <div><span>Wskaźnik intensywności</span><span id="bInt"></span></div>
+        <div><span>Szacunkowy PUM (pow. użytkowa mieszkań)</span><span id="bPum"></span></div>
+        <div><span>Stawka rynkowa za m² PUM</span><span id="bRate"></span></div>
+      </div>
+      <div class="cta">
+        Ta liczba to punkt wyjścia — deweloper zrobi wszystko, żeby ją obniżyć.
+        Jak czytać plan miejscowy, uniknąć pułapek i negocjować jak profesjonalista?
+        <a href="#">Ebook „Sprzedaj korzystnie i bezpiecznie grunt deweloperowi” — 149 zł</a>
+      </div>
+      <p class="disclaimer">Szacunek edukacyjny oparty o publikowane stawki rynkowe za m² PUM (2025).
+      Nie stanowi wyceny w rozumieniu ustawy o gospodarce nieruchomościami ani porady inwestycyjnej.
+      Rzeczywista oferta zależy m.in. od kształtu działki, dostępu do drogi, mediów, zapisów MPZP i kosztów przygotowania terenu.</p>
+    </div>
+
+  </div>
+</main>
+<footer class="sans">© Gruntownie o nieruchomościach · Magdalena Różanowska · <a href="../research/" style="color:inherit">← Wróć do portalu klienta</a></footer>
+
+<script>
+// ponytail: static demo — email gate is a UI mock, nothing is sent anywhere.
+const steps = { calc: document.getElementById('calcForm'), gate: document.getElementById('gateForm'), result: document.getElementById('result') };
+const show = k => { Object.values(steps).forEach(s => s.classList.remove('active')); steps[k].classList.add('active'); };
+const fmt = n => n.toLocaleString('pl-PL', {maximumFractionDigits: 0});
+let calc = null;
+
+steps.calc.addEventListener('submit', e => {
+  e.preventDefault();
+  const area = +document.getElementById('area').value;
+  const rate = +document.getElementById('location').value;
+  const intensity = +document.getElementById('intensity').value;
+  const pum = area * intensity * 0.8; // ~80% of gross buildable area is sellable PUM
+  const value = pum * rate;           // rate = land price per m² PUM (market-reported, land ≈ 30% of flat price)
+  calc = { area, rate, intensity, pum, low: value * 0.8, high: value * 1.2 };
+  show('gate');
+});
+
+steps.gate.addEventListener('submit', e => {
+  e.preventDefault();
+  document.getElementById('valueRange').textContent = fmt(calc.low) + ' – ' + fmt(calc.high) + ' zł';
+  document.getElementById('bArea').textContent = fmt(calc.area) + ' m²';
+  document.getElementById('bInt').textContent = calc.intensity.toLocaleString('pl-PL');
+  document.getElementById('bPum').textContent = fmt(calc.pum) + ' m² PUM';
+  document.getElementById('bRate').textContent = fmt(calc.rate) + ' zł/m² PUM';
+  show('result');
+});
+</script>
+</body>
+</html>
