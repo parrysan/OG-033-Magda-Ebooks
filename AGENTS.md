@@ -90,9 +90,9 @@ Overrides: none yet — add project-specific overrides here as they emerge.
 
 > **Optional, ephemeral.** A 2–3 line free-form scratch pad of "where I left off" — not durable knowledge. Durable decisions belong in the vault project page. Wipe and rewrite freely.
 
-Last action (2026-07-16): Project scaffolded; client portal (docs/client-area/) built out with source-material links and deployed to https://og-033-magda-ebooks.web.app (v1.0). Fable 5 market-assessment brief drafted (docs/fable-brief-market-assessment.md) — being extended to also check EN/DE-language market value before dispatch.
+Last action (2026-07-16): Fable 5 delivered the market assessment (verdict: RESHAPE) and built a land-value calculator MVP. Findings + calculator demo published to the client portal Research tab; deployed as v1.1 to https://og-033-magda-ebooks.web.app.
 
-Next action: Finalise and dispatch the Fable 5 brief (Agent tool, model: fable) to assess the opportunity across Poland (+ EN/DE language viability), and scope a simple MVP.
+Next action: Decide with Phil how to bring the RESHAPE recommendations to Magda (Ebook 2 repricing, funnel redesign, Kanaan copyright fix), then share the portal URL with her.
 
 Open questions: What "client portal" should contain (findings only, or a live dashboard Magda logs into); whether this stays a separate project or folds back into OG-017 once scoped.
 
