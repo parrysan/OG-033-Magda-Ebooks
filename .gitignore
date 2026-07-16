@@ -54,3 +54,7 @@ yarn-error.log*
 # Coverage
 coverage/
 .nyc_output/
+
+# og-deploy staging artefacts
+docs/client-area.deploy/
+firebase.json.predeploy.bak

@@ -95,3 +95,47 @@ Last action (2026-07-16): Project scaffolded via og-project skill. Magda's email
 Next action: Prepare and dispatch a research brief to Fable 5 (Agent tool, model: fable) to assess the land real-estate ebook/education opportunity across Poland, and scope a simple MVP showcasing what the client portal could become.
 
 Open questions: What "client portal" should contain (findings only, or a live dashboard Magda logs into); whether this stays a separate project or folds back into OG-017 once scoped.
+
+---
+
+## Deploy procedure
+
+**Deploys go ONLY through [`scripts/predeploy.sh`](scripts/predeploy.sh).** Calling `firebase deploy --only hosting` directly is forbidden — it bypasses the gates that ensure consistency between source, tag, and live state.
+
+### Steps
+
+```bash
+# 1. Make sure you're on main and the tree is clean (the script will refuse otherwise)
+git checkout main
+git status   # must be clean
+
+# 2. Tag the commit you want to deploy (the tag IS the version label)
+git tag v1.X -m "v1.X — <one-line summary>"
+git push origin v1.X
+
+# 3. Deploy
+./scripts/predeploy.sh
+```
+
+### What the script enforces
+
+- **Gate 1**: branch must be `main` (not a worktree, not a feature branch)
+- **Gate 2**: working tree must be clean (no uncommitted, no untracked)
+- **Gate 3**: `HEAD` must carry a `v*` tag — that tag becomes the version label
+- **Stamp (meta)**: every deployed HTML gets `<meta name="x-version">` and `<meta name="x-build">` injected so any live page traces back to a commit
+- **Stage isolation**: writes to a temp `docs/client-area.deploy/` copy and swaps `firebase.json` — your source tree is never mutated
+
+Override env vars exist for emergencies (`PREDEPLOY_ALLOW_DIRTY=1`, `PREDEPLOY_ALLOW_UNTAGGED=1`) — use sparingly, document why.
+
+No git-hooks/version-stamping infra (`setup-git-hooks.sh`, `version.json`) — this is a plain client portal with no version badge on the page, so that machinery is a no-op here. Add it if a future page needs a visible version label.
+
+### Verifying what's live
+
+Every deployed page carries provenance metadata. View-source any page and look for:
+
+```html
+<meta name="x-version" content="v1.0 — Month YYYY">
+<meta name="x-build" content="<sha> · <date>">
+```
+
+Or via curl: `curl -s https://og-033-magda-ebooks.web.app/ | grep x-build`. If a live page's meta doesn't match a tag in this repo, something is wrong.
