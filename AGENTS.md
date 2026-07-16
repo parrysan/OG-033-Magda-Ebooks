@@ -45,10 +45,11 @@
 
 > **Operational facts that should never have to be re-discovered.** Deployed URLs, store handles, theme IDs, API endpoints, credentials *location* (never the credentials themselves — those live in the global `.env`, see global AGENT.md §2.5). Update this section whenever a fact changes — it is the canonical source.
 
+- **GitHub**: https://github.com/parrysan/OG-033-Magda-Ebooks
 - **Production URL**: (tbd)
 - **Staging / preview URL**: (tbd)
 - **Platform handle / project ID**: (tbd)
-- **Other identifiers**: (tbd)
+- **Research store**: OG-Research/OG-033-Magda-Ebooks/ (research, assets, deliverables) — https://drive.google.com/drive/folders/1GbDvu_fzsrQwFSUO5jD7lQISCC4A9Mbz
 - **Credentials**: stored in global `.env` under `OG033_*`
 
 ---
