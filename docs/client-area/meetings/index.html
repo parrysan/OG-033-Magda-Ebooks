@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Magda Ebooks — Meetings | Oganiko Digital</title>
+<link rel="stylesheet" href="../assets/client.css">
+<link rel="stylesheet" href="../assets/og-tab-rail.css">
+<style>
+/* Meetings tab — self-contained so the feature needs no shared-CSS edit per project */
+.meeting{border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:16px 0;background:var(--surface)}
+.meeting .date{font-size:11.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--og-green)}
+.meeting h3{margin:5px 0 12px}
+.meeting details{border-top:1px solid var(--line);padding:12px 0 4px}
+.meeting details summary{cursor:pointer;font-weight:700;color:var(--og-black);list-style:none;display:flex;align-items:center;gap:8px}
+.meeting details summary::before{content:"▸";color:var(--og-green);transition:transform .15s}
+.meeting details[open] summary::before{transform:rotate(90deg)}
+.meeting details summary::-webkit-details-marker{display:none}
+.meeting details .body{padding:10px 0 4px;font-size:14.5px}
+.meeting details .body ul{margin:0 0 0 20px}
+.meeting .links{margin:14px 0 0;padding-top:12px;border-top:1px solid var(--line);font-size:13.5px}
+.meeting .links a{margin-right:16px}
+.meeting .links .reserved{color:var(--muted);font-weight:600;text-decoration:none}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="brand">Oganiko Digital · Client area</div>
+  <h1>Magda Ebooks — Meetings</h1>
+  <div class="sub">Meeting minutes &amp; action points · updated 2026-07-16</div>
+  <nav class="og-tab-rail">
+    <a href="../">Overview</a>
+    <a href="../research/">Research</a>
+    <a href="./" aria-current="page">Meetings</a>
+  </nav>
+</div></header>
+
+<main class="wrap">
+  <h2>Meetings</h2>
+  <p>Every call is captured here — most recent first. Each meeting has a short summary, an expandable list of action points, and (where available) a link to the full minutes and the recording.</p>
+
+  <!-- MEETING BLOCK TEMPLATE — duplicate per meeting, newest at the top.
+       Feed a Fathom summary in and fill: date, title, summary, action points,
+       Google Doc link (full minutes) and the Fathom recording URL. -->
+  <article class="meeting">
+    <span class="date">{{MEETING_DATE}}</span>
+    <h3>{{MEETING_TITLE}}</h3>
+    <details open>
+      <summary>Summary</summary>
+      <div class="body"><p>{{MEETING_SUMMARY}}</p></div>
+    </details>
+    <details>
+      <summary>Action points</summary>
+      <div class="body"><ul>
+        <li>{{ACTION_POINT}}</li>
+      </ul></div>
+    </details>
+    <p class="links">
+      <a href="{{GOOGLE_DOC_URL}}">Full minutes (Google Doc)</a>
+      <a href="{{FATHOM_URL}}">Recording</a>
+    </p>
+  </article>
+
+  <div class="note">Populated from Fathom meeting summaries. To add a meeting: duplicate the block above, newest first. This area is private (<code>noindex</code>).</div>
+</main>
+
+<footer><div class="wrap">
+  <span>© 2026 <span class="brand">Oganiko Digital</span> · Prepared for Magda Ebooks</span>
+  <span>Private client workspace</span>
+</div></footer>
+</body>
+</html>

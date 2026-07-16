@@ -1,0 +1,39 @@
+/* ============================================================
+   Oganiko Tab Rail — og-tab-rail
+   Canonical component · OS-000 os-002 Tabs / header-nav-dark
+   Source of truth: OS-000-Design-System/dist/og-tab-rail.css
+   ------------------------------------------------------------
+   Provenance: proven in OG-030 client hub (2026-07-04), Phil-approved.
+   Self-contained: every token carries an Oganiko fallback, so this file
+   works alone. Override the tokens in :root to re-theme.
+   DO NOT edit vendored copies — sync from this source.
+   version: 1.0.0 (2026-07-05)
+   ============================================================ */
+
+/* Row of section links on a dark surface. Active link merges into the page:
+   a same-colour box-shadow breaks the accent bar beneath it.
+   Markup:  <nav class="og-tab-rail"> <a aria-current="page">…</a> <a>…</a> </nav>
+   Place on a dark header. Mark the current page with aria-current="page". */
+.og-tab-rail{
+  display:flex;
+  gap:var(--spacing-1,4px);
+  border-bottom:3px solid var(--color-accent,#109200);
+}
+.og-tab-rail a{
+  color:var(--color-text-inverse-muted,#cccccc);
+  text-decoration:none;
+  font-size:var(--text-sm,0.875rem);
+  font-weight:var(--weight-medium,500);
+  padding:10px 18px;
+  border-radius:var(--radius-md,8px) var(--radius-md,8px) 0 0;
+}
+.og-tab-rail a[aria-current="page"]{
+  background:var(--color-bg,#ffffff);
+  color:var(--color-text,#1a1a1a);
+  font-weight:var(--weight-bold,700);
+  box-shadow:0 3px 0 0 var(--color-bg,#ffffff);
+}
+.og-tab-rail a:hover:not([aria-current="page"]){
+  background:var(--color-bg-inverse-hover,#1c1c1c);
+  color:var(--color-text-inverse,#ffffff);
+}
