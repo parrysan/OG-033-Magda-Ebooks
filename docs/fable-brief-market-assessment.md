@@ -31,6 +31,7 @@ Both are dense, technically specific, and genuinely aimed at an underserved angl
 2. **Existing competition**: search for Polish-language books, courses, YouTube/TikTok channels, blogs, or paid consultations already serving landowners on the *seller* side of a developer negotiation. Is Magda's claim — "almost no materials for the selling party" — actually true, or is this a crowded niche she hasn't found yet?
 3. **Willingness to pay**: find comparable Polish digital-product price points (real-estate/legal/financial education ebooks, courses) to sanity-check 149–499 PLN against what this audience (often older, land-owning, sometimes rural/peri-urban) will actually pay for a PDF.
 4. **Channel viability**: realistic benchmarks for organic FB/IG/YT/TikTok growth in the Polish real-estate niche — how long and how much content it typically takes to reach an audience large enough to sell a handful of 400 PLN ebooks a month.
+5. **English/German-language expansion value**: is there a real audience for English and/or German editions of this material — distinct from the core Polish market, sized separately? Two candidate audiences: (a) foreign owners/heirs of Polish land (often German, given proximity — and consistent with the "institutional capital moving into Mazowieckie" finding already on OG-017) who don't read Polish and need help selling; (b) foreign investors/buyers wanting the *buyer*-side context on the Polish land market. Don't assume translation is free upside — factor in localisation cost, different trust signals, different channels, and any legal caveats around foreign land ownership/sale in Poland.
 
 **Phase 2 — If (and only if) Phase 1 shows real demand: strategy**
 
@@ -38,6 +39,7 @@ Both are dense, technically specific, and genuinely aimed at an underserved angl
 - Whether the current two-tier pricing makes sense, or should change.
 - Funnel design from ebook buyer → agency lead — and whether combining "neutral seller education" with "I'm also the agent who might represent you" creates a credibility conflict worth addressing.
 - Which additional ebook topics (if any) would extend the franchise.
+- Whether an English and/or German edition is worth building, based on the Phase 1 sizing — and if so, which one first.
 - A view on whether this stays a standalone product (OG-033) or should fold back into Magda's main website project (OG-017) once scoped.
 - A straight **GO / RESHAPE / KILL** call, with the single cheapest test that would de-risk it fastest.
 
