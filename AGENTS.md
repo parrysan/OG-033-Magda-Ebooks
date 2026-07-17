@@ -24,7 +24,7 @@
 - **Autonomy mode**: `autopilot` — Lane 2 product work skews autopilot by design (see master prompt); Phil reviews at checkpoints.
 - **Purpose** (one sentence): Advise Magda on her "Gruntownie o nieruchomościach" ebook/education business (land real-estate ebooks + checklists, planned "Kanaan" company), assess the opportunity across Poland, and deliver findings via a dedicated client portal.
 - **Client dashboard**: _(not deployed yet — paste the Client Area URL here after deploying; the AIOS project card links it automatically)_
-- **Last touched**: `2026-07-16`
+- **Last touched**: `2026-07-17`
 
 ---
 
@@ -90,11 +90,25 @@ Overrides: none yet — add project-specific overrides here as they emerge.
 
 > **Optional, ephemeral.** A 2–3 line free-form scratch pad of "where I left off" — not durable knowledge. Durable decisions belong in the vault project page. Wipe and rewrite freely.
 
-Last action (2026-07-16): Fable 5 delivered the market assessment (verdict: RESHAPE) and built a land-value calculator MVP. Findings + calculator demo published to the client portal Research tab; deployed as v1.1 to https://og-033-magda-ebooks.web.app.
+Last action (2026-07-17): Generated a strategy infographic via NotebookLM (6-step
+RESHAPE sequence: position → reprice Ebook 2 → shift channel → disclose → test).
+Committed to docs/. Not yet added to the client portal.
 
-Next action: Decide with Phil how to bring the RESHAPE recommendations to Magda (Ebook 2 repricing, funnel redesign, Kanaan copyright fix), then share the portal URL with her.
+In-progress: Waiting on Phil's steer on whether the infographic goes into the
+Research tab, and how the RESHAPE plan gets presented to Magda.
 
-Open questions: What "client portal" should contain (findings only, or a live dashboard Magda logs into); whether this stays a separate project or folds back into OG-017 once scoped.
+Pending decisions: How to bring the RESHAPE recommendations to Magda (Ebook 2
+repricing, funnel redesign, Kanaan copyright fix); whether/where the infographic
+surfaces in the client portal; whether this project stays separate or folds back
+into OG-017.
+
+Open questions: What the client portal should ultimately contain (findings only
+vs. a live dashboard Magda logs into); merge timing with OG-017.
+
+Key IDs/URLs: Client portal https://og-033-magda-ebooks.web.app (v1.1) ·
+Firebase og-033-magda-ebooks · NotebookLM notebook (strategy infographic)
+a9bb58a5-d399-4336-a05a-51ac42ceebac · GitHub
+https://github.com/parrysan/OG-033-Magda-Ebooks
 
 ---
 
